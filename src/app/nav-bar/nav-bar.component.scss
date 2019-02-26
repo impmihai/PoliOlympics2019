@@ -11,7 +11,7 @@ span.welcome {
 }
 
 .mat-toolbar{
-  height: 7vh;
+  min-height: 170px;
 }
 
 div {
@@ -56,4 +56,18 @@ padding: 0 14px;
     padding-top: 0% !important;
     padding-bottom: 0% !important;
     border-radius: 0%;
+}
+
+.logo {
+    height: 150px;
+}
+
+.nav1 {
+    height: 100px;
+    width: 100%;
+}
+
+.nav2 {
+    height: 50px;
+    width: 100%;
 }
