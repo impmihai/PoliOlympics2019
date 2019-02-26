@@ -12,8 +12,9 @@
     <mat-icon fxHide.gt-sm="true" (click)="logout()" *ngIf="email">meeting_room </mat-icon>
     
     <div fxShow="true" fxHide.lt-md="true">
-      <a mat-button routerLink="/login" *ngIf="!email">Login</a>
-      <a mat-button routerLink="/about">About</a>
+      <a mat-button routerLink="/login">Home</a>
+      <a mat-button routerLink="/login">Competitii</a>
+      <a mat-button routerLink="/login">Inscrieri</a>
       <button mat-raised-button (click)="logout()" *ngIf="email">Logout</button>
     </div>
 
