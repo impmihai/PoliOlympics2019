@@ -1,10 +1,12 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { LandingComponent } from '../landing/landing.component';
 
 const app_Routes: Routes = [
   // { path: '', redirectTo: 'login', pathMatch: 'full'},
   // { path: 'login', component: LoginComponent},
   // { path: 'not-found', component: ErrorPageComponent},
+  { path: '', component: LandingComponent},
   { path: '**', redirectTo: 'not-found' } // this should always be the last route!
   /* { path: '', redirectTo: '/somewhere-else', pathMatch: 'full' }
    * Since the default matching strategy is "prefix",

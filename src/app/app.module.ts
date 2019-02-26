@@ -11,12 +11,14 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing/app-routing.module';
 import { HttpModule } from '@angular/http';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { LandingComponent } from './landing/landing.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     SafeUrlPipe,
-    NavBarComponent
+    NavBarComponent,
+    LandingComponent
   ],
   imports: [
     BrowserModule,

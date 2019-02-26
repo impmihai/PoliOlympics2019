@@ -1,0 +1,115 @@
+// theme.scss
+@import '~@angular/material/theming';
+
+// below defines your custom color to build a theme palette from
+$my-blue: (
+  50: #009494,
+  100: #009494,
+  200: #009494,
+  300: #009494,
+  400: #009494,
+  500: #009494,
+  600: #009494,
+  700: #009494,
+  800: #009494,
+  900: #009494,
+  A100: #009494,
+  A200: #009494,
+  A400: #009494,
+  A700: #009494,
+  contrast: (
+    50: white,
+    100: white,
+    200: white,
+    300: white,
+    400: white,
+    500: white,
+    600: white,
+    700: white,
+    800: white,
+    900: white,
+    A100: white,
+    A200: white,
+    A400: white,
+    A700: white,
+  )
+);
+
+
+$my-crem: (
+  50: #F5F2DC,
+  100: #F5F2DC,
+  200: #F5F2DC,
+  300: #F5F2DC,
+  400: #F5F2DC,
+  500: #F5F2DC,
+  600: #F5F2DC,
+  700: #F5F2DC,
+  800: #F5F2DC,
+  900: #F5F2DC,
+  A100: #F5F2DC,
+  A200: #F5F2DC,
+  A400: #F5F2DC,
+  A700: #F5F2DC,
+  contrast: (
+    50: white,
+    100: white,
+    200: white,
+    300: white,
+    400: white,
+    500: white,
+    600: white,
+    700: white,
+    800: white,
+    900: white,
+    A100: white,
+    A200: white,
+    A400: white,
+    A700: white,
+  )
+);
+// below creates a primary palette with three shades of blue
+// $my-primary: mat-palette($my-blue, 100, 50, 200);
+
+$my-orange: (
+  50: #FF5729,
+  100: #FF5729,
+  200: #FF5729,
+  300: #FF5729,
+  400: #FF5729,
+  500: #FF5729,
+  600: #FF5729,
+  700: #FF5729,
+  800: #FF5729,
+  900: #FF5729,
+  A100: #FF5729,
+  A200: #FF5729,
+  A400: #FF5729,
+  A700: #FF5729,
+  contrast: (
+    50: white,
+    100: white,
+    200: white,
+    300: white,
+    400: white,
+    500: white,
+    600: white,
+    700: white,
+    800: white,
+    900: white,
+    A100: white,
+    A200: white,
+    A400: white,
+    A700: white,
+  )
+);
+
+
+$my-theme-primary: mat-palette($my-blue);
+$my-theme-accent : mat-palette($my-crem);
+$my-theme-warn   : mat-palette($my-orange);
+$my-theme: mat-light-theme(
+    $my-theme-primary,
+    $my-theme-accent,
+    $my-theme-warn
+);
