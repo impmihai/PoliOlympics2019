@@ -105,8 +105,8 @@ $my-orange: (
 );
 
 
-$my-theme-primary: mat-palette($my-blue);
-$my-theme-accent : mat-palette($my-crem);
+$my-theme-primary: mat-palette($my-crem);
+$my-theme-accent : mat-palette($my-blue);
 $my-theme-warn   : mat-palette($my-orange);
 $my-theme: mat-light-theme(
     $my-theme-primary,
