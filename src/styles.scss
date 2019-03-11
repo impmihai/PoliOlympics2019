@@ -5,6 +5,26 @@
 
 @import url('https://fonts.googleapis.com/css?family=Pattaya');
 
+.accent-color {
+    color: mat-color($my-theme-accent)
+}
+
+.warn-color {
+    color: mat-color($my-theme-warn)
+}
+
+.primary-background {
+    background: mat-color($my-theme-primary);
+}
+
+.warn-background {
+    background: mat-color($my-theme-warn);
+}
+
+.fullscreen-page {
+    min-height: 100vh;
+}
+
 h1{font-size:2rem}
 h2{font-size:1.5rem}
 h3{font-size:1.25rem}
