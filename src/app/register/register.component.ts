@@ -23,7 +23,7 @@ export class RegisterComponent implements OnInit {
   });
   showCaptainRecommendation = false;
   universities = ['Facultatea de Automatică și Calculatoare', 'Facultatea de Inginerie Electrică', 'Facultatea de Energetică', 'Facultatea de Electronică, Telecomunicații și Tehnologia Informației', 'Facultatea de Inginerie Mecanică și Mecatronică', 'Facultatea de Ingineria și Managementul Sistemelor Tehnologice', 'Facultatea de Ingineria Sistemelor Biotehnice', 'Facultatea de Transporturi', 'Facultatea de Inginerie Aerospațială', 'Facultatea de Știința și Ingineria Materialelor', 'Facultatea de Chimie Aplicată și Știința Materialelor', 'Facultatea de Inginerie în Limbi Străine', 'Facultatea de Științe Aplicate', 'Facultatea de Inginerie Medicală', 'Facultatea de Antreprenoriat, Ingineria și Managementul Afacerilor'];
-  sports = ['Fotbal', 'Cros', 'Ștafetă', 'Șah', 'Tenis de masă', 'Tenis de câmp', 'Volei', 'Baschet', 'Dans în perechi', 'Dans Battle'];
+  sports = ['Fotbal', 'Cros', 'Ștafetă', 'Șah', 'Tenis de masă', 'Tenis de câmp', 'Volei', 'Baschet', 'Tenis cu piciorul', 'Dans Battle'];
   constructor() { }
 
   ngOnInit() {
@@ -53,6 +53,11 @@ export class RegisterComponent implements OnInit {
       return {'minimumTwoSportsRequired': true};
     }
     return null;
+  }
+
+  showSportsError(): boolean {
+    let sportsFormArray = this.registerFormGroup.get('sports') as FormArray;
+    return sportsFormArray.hasError('minimumTwoSportsRequired') && sportsFormArray.touched && sportsFormArray.dirty;
   }
 
   onSubmit() {

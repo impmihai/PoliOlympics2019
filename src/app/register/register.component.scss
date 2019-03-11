@@ -1,7 +1,44 @@
-mat-card-content>p {
+.mat-card-header .mat-card-title {
+    font-size: 30px;
+}
+
+.full-width {
+    width: 100%;
+}
+
+mat-card {
+    min-width: 150px;
+    max-width: 400px;
+    margin: 30px auto;
+    padding: 30px 5vh 10vh 5vh;
     text-align: left;
 }
 
-.mat-card-header .mat-card-title {
-    font-size: 30px;
+mat-label {
+    display: block;
+    padding: 15px 0 5px 0;
+}
+
+mat-radio-group {
+    text-align: left;  
+}
+
+mat-radio-button {
+    display: block;
+}
+
+.gdpr-text {
+    font-size: 12px;
+}
+
+a {
+    font-size: inherit;
+}
+
+.sports-checkbox {
+    text-align: left;
+}
+
+button {
+    margin-top: 15px;
 }

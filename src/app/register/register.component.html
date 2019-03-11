@@ -13,14 +13,14 @@
       <p>Let the fun begin!</p>
       <p>Echipa de organizare Poli Olympics</p>
 
-      <form [formGroup]="registerFormGroup" (ngSubmit)="onSubmit()" class="registerForm">
-        <mat-form-field>
+      <form [formGroup]="registerFormGroup" (ngSubmit)="onSubmit()" class="register-form">
+        <mat-form-field class="full-width">
           <input matInput placeholder="Nume *" formControlName="lastname" name="lastname">
         </mat-form-field>
-        <mat-form-field>
+        <mat-form-field class="full-width">
           <input matInput placeholder="Prenume *" formControlName="firstname" name="firstname">
         </mat-form-field>
-        <mat-form-field>
+        <mat-form-field class="full-width">
           <mat-select placeholder="Facultate" formControlName="university" name="university" required>
             <mat-option [value]="null">Alege</mat-option>
             <mat-option *ngFor="let university of universities" [value]="university">
@@ -28,13 +28,13 @@
             </mat-option>
           </mat-select>
         </mat-form-field>
-        <mat-form-field>
+        <mat-form-field class="full-width">
           <input matInput placeholder="Link către profilul personal de Facebook *" formControlName="facebookUrl" name="facebookUrl">
         </mat-form-field>
-        <mat-form-field>
+        <mat-form-field class="full-width">
           <input matInput placeholder="Adresă mail *" formControlName="email" name="email">
         </mat-form-field>
-        <mat-form-field>
+        <mat-form-field class="full-width">
           <input matInput placeholder="Număr de telefon *" formControlName="phone" name="phone">
         </mat-form-field>
         <mat-label>Dorești să fii căpitanul echipei care îți va reprezenta facultatea? *</mat-label>
@@ -42,25 +42,26 @@
           <mat-radio-button value="true">Da</mat-radio-button>
           <mat-radio-button value="false">Nu</mat-radio-button>
         </mat-radio-group>
-        <mat-form-field *ngIf="showCaptainRecommendation">
-          <input matInput placeholder="Ce anume consideri că te recomandă pentru a fi căpitanul echipei tale? *" formControlName="captainRecommendation" name="captainRecommendation">
+        <mat-label *ngIf="showCaptainRecommendation">Ce anume consideri că te recomandă pentru a fi căpitanul echipei tale? *</mat-label>
+        <mat-form-field *ngIf="showCaptainRecommendation" class="full-width">
+          <textarea  matInput placeholder="" formControlName="captainRecommendation" name="captainRecommendation"></textarea>
         </mat-form-field>
         <mat-label>Bifează competițiile care corespund sporturilor la care te descurci cel mai bine *</mat-label>
         <ng-container formArrayName="sports">
-          <div *ngFor="let sport of sports; let i = index" >
+          <div *ngFor="let sport of sports; let i = index" class="sports-checkbox">
             <mat-checkbox [formControlName]="i">
               {{sport}}
             </mat-checkbox>
           </div>
-          <mat-error *ngIf="registerFormGroup.get('sports').hasError('minimumTwoSportsRequired')">
+          <mat-error *ngIf="showSportsError()">
             Te rugăm, selectează minimum 2 opțiuni!
           </mat-error>
         </ng-container>
-        <mat-form-field>
-          <input matInput placeholder="Observații" formControlName="comments" name="comments">
+        <mat-form-field class="full-width">
+          <textarea matInput placeholder="Observații" formControlName="comments" name="comments"></textarea>
         </mat-form-field>
         <mat-label>Ești de acord cu prelucrarea datelor tale personale de mai sus? *</mat-label>
-        <p>Prin bifarea opțiunii “Sunt de acord”, am luat la cunoștință informarea privind protecția datelor cu caracter personal, anexată în link-ul [1], sunt de acord cu întregul conținut și am completat personal datele din prezentul formular. [1] <a href="http://lsacbucuresti.ro/documente/anexa-formulare.pdf">http://lsacbucuresti.ro/documente/anexa-formulare.pdf</a></p>
+        <p class="gdpr-text">Prin bifarea opțiunii “Sunt de acord”, am luat la cunoștință informarea privind protecția datelor cu caracter personal, anexată în link-ul [1], sunt de acord cu întregul conținut și am completat personal datele din prezentul formular. [1] <a href="http://lsacbucuresti.ro/documente/anexa-formulare.pdf">http://lsacbucuresti.ro/documente/anexa-formulare.pdf</a></p>
         <mat-radio-group formControlName="gdpr">
           <mat-radio-button value="true">Sunt de acord</mat-radio-button>
         </mat-radio-group>
