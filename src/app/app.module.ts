@@ -13,6 +13,7 @@ import { HttpModule } from '@angular/http';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { LandingComponent } from './landing/landing.component';
 import { FooterComponent } from './footer/footer.component';
+import { RegisterComponent } from './register/register.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { FooterComponent } from './footer/footer.component';
     SafeUrlPipe,
     NavBarComponent,
     LandingComponent,
-    FooterComponent
+    FooterComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,

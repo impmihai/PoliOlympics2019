@@ -1,0 +1,71 @@
+<div class="container">
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>Înscriere Poli Olympics</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <p>Salut!</p>
+      <br>
+      <p>Te invităm să participi la Poli Olympics, evenimentul marca LSAC cu sprijinul Rectoratului Universității Politehnica în cadrul căruia se vor întrece cele 15 facultăți din Universitate, scopul final fiind distracția și buna dispoziție.</p>
+      <br>
+      <p>Fiecare dintre cele 15 echipe va fi formată din 20 de membri ai celeași Facultăți, aceștia concurând, fiecare, în câteva dintre cele 10 competiții disponibile. Membrii vor fi selecționați, în funcție de caz, de către căpitanii echipelor.</p>
+      <br>
+      <p>Let the fun begin!</p>
+      <p>Echipa de organizare Poli Olympics</p>
+
+      <form [formGroup]="registerFormGroup" (ngSubmit)="onSubmit()" class="registerForm">
+        <mat-form-field>
+          <input matInput placeholder="Nume *" formControlName="lastname" name="lastname">
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput placeholder="Prenume *" formControlName="firstname" name="firstname">
+        </mat-form-field>
+        <mat-form-field>
+          <mat-select placeholder="Facultate" formControlName="university" name="university" required>
+            <mat-option [value]="null">Alege</mat-option>
+            <mat-option *ngFor="let university of universities" [value]="university">
+              {{university}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput placeholder="Link către profilul personal de Facebook *" formControlName="facebookUrl" name="facebookUrl">
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput placeholder="Adresă mail *" formControlName="email" name="email">
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput placeholder="Număr de telefon *" formControlName="phone" name="phone">
+        </mat-form-field>
+        <mat-label>Dorești să fii căpitanul echipei care îți va reprezenta facultatea? *</mat-label>
+        <mat-radio-group formControlName="captain">
+          <mat-radio-button value="true">Da</mat-radio-button>
+          <mat-radio-button value="false">Nu</mat-radio-button>
+        </mat-radio-group>
+        <mat-form-field *ngIf="showCaptainRecommendation">
+          <input matInput placeholder="Ce anume consideri că te recomandă pentru a fi căpitanul echipei tale? *" formControlName="captainRecommendation" name="captainRecommendation">
+        </mat-form-field>
+        <mat-label>Bifează competițiile care corespund sporturilor la care te descurci cel mai bine *</mat-label>
+        <ng-container formArrayName="sports">
+          <div *ngFor="let sport of sports; let i = index" >
+            <mat-checkbox [formControlName]="i">
+              {{sport}}
+            </mat-checkbox>
+          </div>
+          <mat-error *ngIf="registerFormGroup.get('sports').hasError('minimumTwoSportsRequired')">
+            Te rugăm, selectează minimum 2 opțiuni!
+          </mat-error>
+        </ng-container>
+        <mat-form-field>
+          <input matInput placeholder="Observații" formControlName="comments" name="comments">
+        </mat-form-field>
+        <mat-label>Ești de acord cu prelucrarea datelor tale personale de mai sus? *</mat-label>
+        <p>Prin bifarea opțiunii “Sunt de acord”, am luat la cunoștință informarea privind protecția datelor cu caracter personal, anexată în link-ul [1], sunt de acord cu întregul conținut și am completat personal datele din prezentul formular. [1] <a href="http://lsacbucuresti.ro/documente/anexa-formulare.pdf">http://lsacbucuresti.ro/documente/anexa-formulare.pdf</a></p>
+        <mat-radio-group formControlName="gdpr">
+          <mat-radio-button value="true">Sunt de acord</mat-radio-button>
+        </mat-radio-group>
+        <button mat-stroked-button color="accent" type="submit">Înscriere</button>
+      </form>
+    </mat-card-content>
+  </mat-card>
+</div>
