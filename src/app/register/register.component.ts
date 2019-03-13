@@ -56,11 +56,34 @@ export class RegisterComponent implements OnInit {
   }
 
   showSportsError(): boolean {
-    let sportsFormArray = this.registerFormGroup.get('sports') as FormArray;
+    const sportsFormArray = this.registerFormGroup.get('sports') as FormArray;
     return sportsFormArray.hasError('minimumTwoSportsRequired') && sportsFormArray.touched && sportsFormArray.dirty;
   }
 
   onSubmit() {
     console.log(this.registerFormGroup);
+    const sportsFormArray = this.registerFormGroup.get('sports') as FormArray;
+    let i = 0;
+    const sports = [];
+    sportsFormArray.controls.forEach(control => {
+      if (control.value === true) {
+        sports.push(this.sports[i]);
+      }
+      i++;
+    });
+    const response = {
+      lastname: this.registerFormGroup.get('lastname').value,
+      firstname: this.registerFormGroup.get('firstname').value,
+      university: this.registerFormGroup.get('university').value,
+      facebookUrl: this.registerFormGroup.get('facebookUrl').value,
+      email: this.registerFormGroup.get('email').value,
+      phone: this.registerFormGroup.get('phone').value,
+      captain: this.registerFormGroup.get('captain').value,
+      captainRecommendation: this.registerFormGroup.get('captainRecommendation').value,
+      sports: sports,
+      comments: this.registerFormGroup.get('comments').value,
+      gdpr: this.registerFormGroup.get('gdpr').value,
+    };
+    console.log(response);
   }
 }
