@@ -28,7 +28,7 @@
             ],
             "styles": [
               "src/styles.scss",
-              "node_modules/materialize-css/dist/css/materialize.css"
+              "src/materialize_bun.css"
             ],
             "scripts": [
               "node_modules/jquery/dist/jquery.js",

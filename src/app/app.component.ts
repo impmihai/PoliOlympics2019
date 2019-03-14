@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -11,4 +11,23 @@ export class AppComponent implements OnInit {
   ngOnInit(): void {
     localStorage.clear();
   }
+
+  constructor() {
+    this.sidenavActions = new EventEmitter<any>();
+    this.sidenavParams = [];
+  }
+
+  close() {
+    this.sidenavActions.emit({ action: 'sideNav', params: ['hide'] });
+  }
+  open() {
+    this.sidenavActions.emit({ action: 'sideNav', params: ['show'] });
+  }
+
+  facebookNav() {
+    window.location.href = 'http://www.google.com';
+  }
+
+  sidenavActions: EventEmitter<any>;
+  sidenavParams: any[];
 }

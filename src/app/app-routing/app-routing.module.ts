@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { LandingComponent } from '../landing/landing.component';
 import { RegisterComponent } from '../register/register.component';
+import { SportComponent } from '../sport/sport.component';
 
 const app_Routes: Routes = [
   // { path: '', redirectTo: 'login', pathMatch: 'full'},
@@ -9,6 +10,7 @@ const app_Routes: Routes = [
   // { path: 'not-found', component: ErrorPageComponent},
   { path: '', component: LandingComponent},
   { path: 'register', component: RegisterComponent},
+  { path: 'sports/:id', component: SportComponent},
   { path: '**', redirectTo: 'not-found' } // this should always be the last route!
   /* { path: '', redirectTo: '/somewhere-else', pathMatch: 'full' }
    * Since the default matching strategy is "prefix",
