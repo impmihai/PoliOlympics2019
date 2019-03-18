@@ -11,7 +11,8 @@ import { toast } from 'angular2-materialize';
 export class ContactComponent implements OnInit {
   contactFormGroup = new FormGroup({
     'email': new FormControl(null, Validators.required),
-    'message': new FormControl(null, Validators.required)
+    'message': new FormControl(null, Validators.required),
+    'name': new FormControl(null, Validators.required)
   });
   constructor(private _db: DatabaseService) { }
 
@@ -23,6 +24,7 @@ export class ContactComponent implements OnInit {
       const response = {
         email: this.contactFormGroup.get('email').value,
         message: this.contactFormGroup.get('message').value
+        name: this.contactFormGroup.get('name').value
       };
       this._db.saveContactInfo(response).then(success => {
         toast('Mesaj trimis cu succes!');
