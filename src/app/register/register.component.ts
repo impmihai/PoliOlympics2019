@@ -26,7 +26,7 @@ export class RegisterComponent implements OnInit {
   });
   showCaptainRecommendation = false;
   universities = ['Facultatea de Automatică și Calculatoare', 'Facultatea de Inginerie Electrică', 'Facultatea de Energetică', 'Facultatea de Electronică, Telecomunicații și Tehnologia Informației', 'Facultatea de Inginerie Mecanică și Mecatronică', 'Facultatea de Ingineria și Managementul Sistemelor Tehnologice', 'Facultatea de Ingineria Sistemelor Biotehnice', 'Facultatea de Transporturi', 'Facultatea de Inginerie Aerospațială', 'Facultatea de Știința și Ingineria Materialelor', 'Facultatea de Chimie Aplicată și Știința Materialelor', 'Facultatea de Inginerie în Limbi Străine', 'Facultatea de Științe Aplicate', 'Facultatea de Inginerie Medicală', 'Facultatea de Antreprenoriat, Ingineria și Managementul Afacerilor'];
-  sports = ['Fotbal', 'Cros', 'Ștafetă', 'Șah', 'Tenis de masă', 'Tenis de câmp', 'Volei', 'Baschet', 'Tenis cu piciorul', 'Dans Battle'];
+  sports = ['Fotbal', 'Cros', 'Ștafetă', 'Șah', 'Tenis de masă', 'Tenis de câmp', 'Volei', 'Baschet', 'Tenis de picior', 'Dans Battle'];
   activateGdprError = false;
   constructor(private _db: DatabaseService) { }
 
@@ -93,6 +93,8 @@ export class RegisterComponent implements OnInit {
 
       this._db.registerUser(response).then(success => {
         toast('Inregistrare realizată cu succes!');
+        this.registerFormGroup.get('sports').markAsUntouched();
+        this.registerFormGroup.markAsUntouched();
         this.registerFormGroup.reset();
       }).catch(fail => {
         toast('A apărut o eroare. Te rog verifică datele sau contactează-ne dacă eroarea persistă.');
