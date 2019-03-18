@@ -11,4 +11,8 @@ export class DatabaseService {
   public registerUser(_data: any) {
     return this.afDb.firestore.collection('participants').add(_data);
   }
+
+  public saveContactInfo(_data: any) {
+    return this.afDb.firestore.collection('contact').add(_data);
+  }
 }
