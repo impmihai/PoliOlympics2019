@@ -1,0 +1,20 @@
+<div class="container">
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>Formular de contact</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <p>Pentru neclarități completează formularul de mai jos și vei fi contactat pe mail.</p>
+
+      <form [formGroup]="contactFormGroup" (ngSubmit)="onSubmit()" class="contact-form">
+        <mat-form-field class="full-width">
+          <input matInput placeholder="Adresă mail *" formControlName="email" name="email">
+        </mat-form-field>
+        <mat-form-field class="full-width">
+          <textarea matInput placeholder="Mesaj *" formControlName="message" name="message"></textarea>
+        </mat-form-field>
+        <button mat-stroked-button color="accent" type="submit">Trimite</button>
+      </form>
+    </mat-card-content>
+  </mat-card>
+</div>

@@ -60,7 +60,7 @@
         <mat-form-field class="full-width">
           <textarea matInput placeholder="Observații" formControlName="comments" name="comments"></textarea>
         </mat-form-field>
-        <mat-label [style.color]="registerFormGroup.get('gdpr').invalid && activateGdprError ? 'red' : 'black'">Ești de acord cu prelucrarea datelor tale personale de mai sus? *</mat-label>
+        <mat-label [style.color]="registerFormGroup.get('gdpr').invalid && activateGdprError ? '#ff5729' : 'rgba(0, 0, 0, 0.87)'">Ești de acord cu prelucrarea datelor tale personale de mai sus? *</mat-label>
         <p class="gdpr-text">Prin bifarea opțiunii “Sunt de acord”, am luat la cunoștință informarea privind protecția datelor cu caracter personal, anexată în link-ul [1], sunt de acord cu întregul conținut și am completat personal datele din prezentul formular. [1] <a href="http://lsacbucuresti.ro/documente/anexa-formulare.pdf">http://lsacbucuresti.ro/documente/anexa-formulare.pdf</a></p>
         <mat-radio-group formControlName="gdpr">
           <mat-radio-button value="true">Sunt de acord</mat-radio-button>

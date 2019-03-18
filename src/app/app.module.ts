@@ -18,6 +18,7 @@ import { SportComponent } from './sport/sport.component';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFirestoreModule } from 'angularfire2/firestore'; 
 import { environment } from 'src/environments/environment';
+import { ContactComponent } from './contact/contact.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,7 +26,8 @@ import { environment } from 'src/environments/environment';
     LandingComponent,
     FooterComponent,
     RegisterComponent,
-    SportComponent
+    SportComponent,
+    ContactComponent
   ],
   imports: [
     BrowserModule,
