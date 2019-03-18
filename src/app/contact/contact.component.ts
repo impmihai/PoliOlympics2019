@@ -23,7 +23,7 @@ export class ContactComponent implements OnInit {
     if (this.contactFormGroup.valid) {
       const response = {
         email: this.contactFormGroup.get('email').value,
-        message: this.contactFormGroup.get('message').value
+        message: this.contactFormGroup.get('message').value,
         name: this.contactFormGroup.get('name').value
       };
       this._db.saveContactInfo(response).then(success => {
