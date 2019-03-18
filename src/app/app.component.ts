@@ -25,7 +25,7 @@ export class AppComponent implements OnInit {
   }
 
   facebookNav() {
-    window.location.href = 'http://www.google.com';
+    window.location.href = 'https://www.facebook.com/events/1811994815572623/';
   }
 
   sidenavActions: EventEmitter<any>;
