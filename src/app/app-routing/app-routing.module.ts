@@ -4,6 +4,7 @@ import { LandingComponent } from '../landing/landing.component';
 import { RegisterComponent } from '../register/register.component';
 import { SportComponent } from '../sport/sport.component';
 import { ContactComponent } from '../contact/contact.component';
+import { SituatieInscrieriComponent } from '../situatie-inscrieri/situatie-inscrieri.component';
 
 const app_Routes: Routes = [
   // { path: '', redirectTo: 'login', pathMatch: 'full'},
@@ -13,6 +14,7 @@ const app_Routes: Routes = [
   { path: 'register', component: RegisterComponent},
   { path: 'contact', component: ContactComponent},
   { path: 'sports/:id', component: SportComponent},
+  { path: 'inscrisi', component: SituatieInscrieriComponent},
   { path: '**', redirectTo: 'not-found' } // this should always be the last route!
   /* { path: '', redirectTo: '/somewhere-else', pathMatch: 'full' }
    * Since the default matching strategy is "prefix",

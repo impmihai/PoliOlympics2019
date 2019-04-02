@@ -1,0 +1,74 @@
+<table style="margin-top: 100px;">
+  <tr>
+    <th>
+      Nr. crt.
+    </th>
+    <th>
+      Nume
+    </th>
+    <th>
+      Prenume
+    </th>
+    <th>
+      Facultate
+    </th>
+    <th>
+      Telefon
+    </th>
+    <th>
+      Email
+    </th>
+    <th>
+      Facebook
+    </th>
+    <th>
+      Sporturi
+    </th>
+    <th>
+      Capitan?
+    </th>
+    <th>
+      Recomandare capitan
+    </th>
+    <th>
+        Observatii
+      </th>
+  </tr>
+  <tr *ngFor="let person of persons; let i = index">
+    <td>
+      {{i}}
+    </td>
+    <td>
+      {{person.lastname}}
+    </td>
+    <td>
+      {{person.firstname}}
+    </td>
+    <td>
+      {{person.university}}
+    </td>
+    <td>
+      {{person.phone}}
+    </td>
+    <td>
+      {{person.email}}
+    </td>
+    <td>
+      {{person.facebookUrl}}
+    </td>
+    <td>
+      {{person.sports}}
+    </td>
+    <td>
+      {{person.captain === 'true' ? 'Da' : 'Nu'}}
+    </td>
+    <td>
+      {{person.captain === 'true' ? person.captainRecommendation : '-'}}
+    </td>
+
+    <td>
+        {{person.comments}}
+      </td>
+  </tr>
+
+</table>

@@ -15,4 +15,8 @@ export class DatabaseService {
   public saveContactInfo(_data: any) {
     return this.afDb.firestore.collection('contact').add(_data);
   }
+
+  public getInscrisi() {
+    return this.afDb.firestore.collection('participants').orderBy('university').get();
+  }
 }

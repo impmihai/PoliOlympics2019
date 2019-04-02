@@ -1,5 +1,5 @@
 <div class="row" style="margin-top: 8vh; position: relative">
-  <div class="col l8 s12">
+  <!-- <div class="col l8 s12">
       <div style="padding-left: 11vw; position: relative;" class="col l12 s12">
         <div style="height: 20px; width: 10vw; position: absolute; left:0px; top: 50%; transform: translateY(-50%);" class="warn-background"></div>
         <h3 class="accent-color">{{sports[id]}}</h3>
@@ -14,14 +14,15 @@
       </div>
   </div>
 
-  <img class="col l2 offset-l1 hide-on-med-and-down" style="position: absolute; top: 50%; transform: translateY(-50%); " [src]="images[id]">
+  <img class="col l2 offset-l1 hide-on-med-and-down" style="position: absolute; top: 50%; transform: translateY(-50%); " [src]="images[id]"> -->
 </div>
 
 <div class="separator primary-background" style="position: relative;">
   <div class="warn-background" style="height: 3px; position: absolute; top: 50%; left: 50%; width: 90%; transform: translate(-50%, -50%); z-index: 0"></div>
-  <p class="mat-headline primary-background accent-color" style="padding: 30px; width: fit-content; z-index: 900; margin: 0 auto; position: relative">Regulament</p>
+  <p class="mat-headline primary-background accent-color" style="padding: 30px; width: fit-content; z-index: 900; margin: 0 auto; position: relative">Regulament {{ sports[id] }}</p>
 </div>
 
 <div class="flow-text container justify" style="padding: 30px 0; min-height: 200px;">
-    {{rules[id]}}
+  <div [innerHTML]="rules[id]">
+  </div>
 </div>
