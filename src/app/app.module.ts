@@ -20,6 +20,8 @@ import { AngularFirestoreModule } from 'angularfire2/firestore';
 import { environment } from 'src/environments/environment';
 import { ContactComponent } from './contact/contact.component';
 import { SituatieInscrieriComponent } from './situatie-inscrieri/situatie-inscrieri.component';
+import { SportsLoginComponent } from './admin/sports-login/sports-login.component';
+import { SportsScoreComponent } from './admin/sports-score/sports-score.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -29,7 +31,9 @@ import { SituatieInscrieriComponent } from './situatie-inscrieri/situatie-inscri
     RegisterComponent,
     SportComponent,
     ContactComponent,
-    SituatieInscrieriComponent
+    SituatieInscrieriComponent,
+    SportsLoginComponent,
+    SportsScoreComponent
   ],
   imports: [
     BrowserModule,

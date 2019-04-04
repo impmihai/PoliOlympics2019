@@ -1,6 +1,7 @@
 import { Component,
    OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { MatchScore, DatabaseService } from '../database.service';
 
 @Component({
   selector: 'app-sport',
@@ -9,7 +10,7 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class SportComponent implements OnInit {
 
-  constructor(private _route: ActivatedRoute) { }
+  constructor(private _route: ActivatedRoute, private databaseService: DatabaseService) { }
 
   id: number;
   sports = ['Fotbal',
@@ -52,10 +53,32 @@ export class SportComponent implements OnInit {
    '../../assets/images/baschet.svg',
    '../../assets/images/fotbal.svg',
    '../../assets/images/dans.svg']
+  facultati = [
+    'ACS',
+    'IE',
+    'Energetica',
+    'ETTI',
+    'IMM',
+    'IMST',
+    'ISB',
+    'Trans',
+    'Aero',
+    'SIM',
+    'FILS',
+    'FSA',
+    'Medicala',
+    'FAIMA'
+  ]
+
+  matches: MatchScore[];
 
   ngOnInit() {
     this._route.params.subscribe(params => {
       this.id = params['id'];
+      console.log(this.id);
+      this.databaseService.getLiveScores(this.id).subscribe(matches => {
+        this.matches = matches;
+      });
     })
   }
 }

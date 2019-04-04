@@ -1,4 +1,32 @@
-<div class="row" style="margin-top: 8vh; position: relative">
+<div *ngIf="!(matches?.length)" class="row" style="margin-top: 6vh; position: relative; z-index: -1" class="primary-background">
+</div>
+
+<div *ngIf="(matches?.length)" class="row" style="margin-top: 6vh; position: relative; z-index: -1" class="primary-background">
+  <div style="height: 20px; width: 100%;"></div>
+  <div style="padding-left: 11vw; position: relative; margin-top: 20px;" class="col l12 s12">
+    <div style="height: 20px; width: 10vw; position: absolute; left:0px; top: 50%; transform: translateY(-50%);" class="warn-background"></div>
+    <h3 class="accent-color">Competiții {{sports[id]}}</h3>
+  </div>
+
+  <div class="container">
+    <div *ngFor="let match of matches" class="row flow-text" style="margin-bottom: 20px;"  fxLayout="row" fxLayoutAlign="space-around center">
+      <div class="center col s5 m5 l5" style="background: white; padding: 10px; position: relative;">
+        {{ facultati[match.team1] }}
+        <div style="position: absolute; right: 0; top: 50%; transform: translateY(-50%); height: 100%; padding: 10px 10px; display: table-cell; vertical-align: middle;" class="warn-background">
+          <b style="color: white;">{{match.score1}}</b>
+        </div>
+      </div>
+      <div class="center col s2 m2 l2">
+        <b class="accent-color">VS</b>
+      </div>
+      <div class="center col s5 m5 l5" style="background: white; padding: 10px; position: relative;">
+        <div style="position: absolute; left: 0; top: 50%; transform: translateY(-50%); height: 100%; padding: 10px 10px; display: table-cell; vertical-align: middle;" class="warn-background">
+          <b style="color: white;">{{match.score2}}</b>
+        </div>
+        {{ facultati[match.team2] }}
+      </div>
+    </div>
+  </div>
   <!-- <div class="col l8 s12">
       <div style="padding-left: 11vw; position: relative;" class="col l12 s12">
         <div style="height: 20px; width: 10vw; position: absolute; left:0px; top: 50%; transform: translateY(-50%);" class="warn-background"></div>
@@ -17,7 +45,7 @@
   <img class="col l2 offset-l1 hide-on-med-and-down" style="position: absolute; top: 50%; transform: translateY(-50%); " [src]="images[id]"> -->
 </div>
 
-<div class="separator primary-background" style="position: relative;">
+<div class="separator primary-background" style="position: relative; margin-top: -20px;">
   <div class="warn-background" style="height: 3px; position: absolute; top: 50%; left: 50%; width: 90%; transform: translate(-50%, -50%); z-index: 0"></div>
   <p class="mat-headline primary-background accent-color" style="padding: 30px; width: fit-content; z-index: 900; margin: 0 auto; position: relative">Regulament {{ sports[id] }}</p>
 </div>

@@ -12,7 +12,7 @@
             <a routerLink="/" routerLinkActive="active" class="mat-headline primary-background accent-color" style="padding: 20px; width: fit-content; z-index: 900; margin: 0 auto; position: relative; text-transform: uppercase;">Home</a>
             <a (click)="open()" routerLinkActive="active" class="mat-headline primary-background accent-color" style="cursor: pointer; user-select: none; padding: 30px; width: fit-content; z-index:900; margin: 0 auto; position: relative; text-transform: uppercase;">Competitii</a>
             <a href="../assets/regulament.pdf" target="_blank" class="mat-headline primary-background accent-color" style="cursor: pointer; user-select: none; padding: 20px; width: fit-content; z-index:900; margin: 0 auto; position: relative; text-transform: uppercase;">Regulament</a>
-            <a href="../assets/program.pdf" target="_blank" class="mat-headline primary-background accent-color" style="cursor: pointer; user-select: none; padding: 20px; width: fit-content; z-index:900; margin: 0 auto; position: relative; text-transform: uppercase;">Program</a>
+            <a href="../assets/program.png" target="_blank" class="mat-headline primary-background accent-color" style="cursor: pointer; user-select: none; padding: 20px; width: fit-content; z-index:900; margin: 0 auto; position: relative; text-transform: uppercase;">Program</a>
             <!-- <a routerLink="/register" routerLinkActive="active" class="mat-headline primary-background accent-color" style="padding: 20px; width: fit-content; z-index: 900; margin: 0 auto; position: relative; text-transform: uppercase;">Înscrie-te!</a> -->
             <a routerLink="/contact" routerLinkActive="active" class="mat-headline primary-background accent-color" style="padding: 15px; width: fit-content; z-index: 900; margin: 0 auto; position: relative; text-transform: uppercase;">Contact</a>
         </div>
@@ -24,7 +24,7 @@
                 <a ><i class="material-icons" (click)="close()">close</i></a>
             </li>
             <li class="hide-on-med-and-up" routerLinkActive="active"><a class="black-text" routerLink="/" (click)="close()">Home</a></li>
-            <li class="hide-on-med-and-up" routerLinkActive="active"><a class="black-text" routerLink="/register" (click)="close()">Înscrie-te!</a></li>
+            <!-- <li class="hide-on-med-and-up" routerLinkActive="active"><a class="black-text" routerLink="/register" (click)="close()">Înscrie-te!</a></li> -->
             <ul style="padding-left: 10px">
                 <p class="black-text">Competitii</p>
                 <li routerLinkActive="active"><a class="black-text" routerLink="/sports/0" (click)="close()">Fotbal</a></li>
@@ -39,6 +39,7 @@
                 <li routerLinkActive="active"><a class="black-text" routerLink="/sports/9" (click)="close()">Dans Battle</a></li>
             </ul>
             <li class="hide-on-med-and-up" routerLinkActive="active"><a class="black-text" href="../assets/regulament.pdf" target="_blank" (click)="close()">Regulament</a></li>
+            <li class="hide-on-med-and-up" routerLinkActive="active"><a class="black-text" href="../assets/program.png" target="_blank" (click)="close()">Program</a></li>            
             <li class="hide-on-med-and-up" routerLinkActive="active"><a class="black-text" routerLink="/contact" (click)="close()">Contact</a></li>
         </ul>
     </div>

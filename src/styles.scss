@@ -13,6 +13,10 @@
     color: mat-color($my-theme-warn)
 }
 
+.accent-background {
+    background: mat-color($my-theme-accent);
+}
+
 .primary-background {
     background: mat-color($my-theme-primary);
 }
