@@ -12,7 +12,7 @@
     <div *ngFor="let match of matches" class="row flow-text" style="margin-bottom: 20px;"  fxLayout="row" fxLayoutAlign="space-around center">
       <div class="center col s5 m5 l5" style="background: white; padding: 10px; position: relative;">
         {{ facultati[match.team1] }}
-        <div style="position: absolute; right: 0; top: 50%; transform: translateY(-50%); height: 100%; padding: 10px 10px; display: table-cell; vertical-align: middle;" class="warn-background">
+        <div style="position: absolute; right: 0; top: 50%; transform: translateY(-50%); height: 100%; padding: 10px 10px; display: table-cell; vertical-align: middle;" [class.warn-background]="match.status == 'end'" [class.accent-background]="match.status == 'playing'">
           <b style="color: white;">{{match.score1}}</b>
         </div>
       </div>
@@ -20,7 +20,7 @@
         <b class="accent-color">VS</b>
       </div>
       <div class="center col s5 m5 l5" style="background: white; padding: 10px; position: relative;">
-        <div style="position: absolute; left: 0; top: 50%; transform: translateY(-50%); height: 100%; padding: 10px 10px; display: table-cell; vertical-align: middle;" class="warn-background">
+        <div style="position: absolute; left: 0; top: 50%; transform: translateY(-50%); height: 100%; padding: 10px 10px; display: table-cell; vertical-align: middle;" [class.warn-background]="match.status == 'end'" [class.accent-background]="match.status == 'playing'">
           <b style="color: white;">{{match.score2}}</b>
         </div>
         {{ facultati[match.team2] }}

@@ -21,7 +21,7 @@ import { environment } from 'src/environments/environment';
 import { ContactComponent } from './contact/contact.component';
 import { SituatieInscrieriComponent } from './situatie-inscrieri/situatie-inscrieri.component';
 import { SportsLoginComponent } from './admin/sports-login/sports-login.component';
-import { SportsScoreComponent } from './admin/sports-score/sports-score.component';
+import { AngularFireAuthModule } from 'angularfire2/auth';
 @NgModule({
   declarations: [
     AppComponent,
@@ -33,7 +33,6 @@ import { SportsScoreComponent } from './admin/sports-score/sports-score.componen
     ContactComponent,
     SituatieInscrieriComponent,
     SportsLoginComponent,
-    SportsScoreComponent
   ],
   imports: [
     BrowserModule,
@@ -48,6 +47,7 @@ import { SportsScoreComponent } from './admin/sports-score/sports-score.componen
     MaterializeModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
+    AngularFireAuthModule
   ],
   providers: [],
   bootstrap: [AppComponent]
