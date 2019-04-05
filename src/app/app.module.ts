@@ -22,6 +22,9 @@ import { ContactComponent } from './contact/contact.component';
 import { SituatieInscrieriComponent } from './situatie-inscrieri/situatie-inscrieri.component';
 import { SportsLoginComponent } from './admin/sports-login/sports-login.component';
 import { AngularFireAuthModule } from 'angularfire2/auth';
+import { ScoruriLiveComponent } from './scoruri-live/scoruri-live.component';
+import { NguCarouselModule } from '@ngu/carousel';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -33,7 +36,8 @@ import { AngularFireAuthModule } from 'angularfire2/auth';
     ContactComponent,
     SituatieInscrieriComponent,
     SportsLoginComponent,
-  ],
+    ScoruriLiveComponent,
+  ],  
   imports: [
     BrowserModule,
     MaterialModule,
@@ -47,7 +51,8 @@ import { AngularFireAuthModule } from 'angularfire2/auth';
     MaterializeModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
-    AngularFireAuthModule
+    AngularFireAuthModule,
+    NguCarouselModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
