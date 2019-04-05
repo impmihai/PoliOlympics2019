@@ -43,7 +43,10 @@ export class ScoruriLiveComponent implements OnInit {
   matches: MatchScore[] = null;
   displayMatches: MatchScore[];
   ngOnInit() {
-    this.dataService.getLiveScores().subscribe(scores => this.matches = scores);
+    this.dataService.getLiveScores().subscribe(scores => {
+      this.displayMatches = this.matches.filter(match => match.sport == this.currentSport)      
+      this.matches = scores
+    });
     setInterval(() => {
       this.currentSport ++;
       console.log("interval");

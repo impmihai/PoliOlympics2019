@@ -18,7 +18,7 @@ const app_Routes: Routes = [
   { path: 'sports/:id', component: SportComponent},
   { path: 'inscrisi', component: SituatieInscrieriComponent},
   { path: 'admin', component: SportsLoginComponent},
-  { path: 'live', component: ScoruriLiveComponent},
+  { path: 'livescores', component: ScoruriLiveComponent},
   { path: '**', redirectTo: 'not-found' } // this should always be the last route!
   /* { path: '', redirectTo: '/somewhere-else', pathMatch: 'full' }
    * Since the default matching strategy is "prefix",
