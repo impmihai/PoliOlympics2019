@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { DatabaseService, MatchScore } from '../database.service';
-import { NguCarousel, NguCarouselStore } from '@ngu/carousel';
 import { matchesElement } from '@angular/animations/browser/src/render/shared';
 
 @Component({
@@ -58,12 +57,6 @@ export class ScoruriLiveComponent implements OnInit {
       }
       this.displayMatches = this.matches.filter(match => match.sport == this.currentSport)
     }, 10000);
-  }
-
-  
-
-  onmoveFn(data: NguCarouselStore) {
-    console.log(data);
   }
 }
 

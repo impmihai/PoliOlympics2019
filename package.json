@@ -23,7 +23,6 @@
     "@angular/platform-browser": "~7.0.0",
     "@angular/platform-browser-dynamic": "~7.0.0",
     "@angular/router": "~7.0.0",
-    "@ngu/carousel": "^1.5.5",
     "angular2-materialize": "^15.1.10",
     "angularfire2": "^5.1.2",
     "core-js": "^2.5.4",
