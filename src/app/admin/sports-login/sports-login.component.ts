@@ -105,7 +105,10 @@ export class SportsLoginComponent implements OnInit {
 
   onMatchStart() {
     if (this.scoringMatchForm.valid) {
-      this.getMatchData().then(a => this.matchPlaying = a);
+      this.getMatchData().then(a => {
+        this.matchPlaying = a;
+        this.updateMatchData();
+      })
     }
   }
 
