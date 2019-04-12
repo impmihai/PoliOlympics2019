@@ -40,8 +40,14 @@
             </mat-option>
           </mat-select>
         </mat-form-field>
+        
         <mat-form-field class="full-width">
-          <input matInput placeholder="match_id" formControlName="match_id" name="match_id">
+          <mat-select placeholder="etapa" formControlName="match_id" name="match_id" required>
+            <mat-option [value]="null">Alege</mat-option>
+            <mat-option *ngFor="let etapa of etape" [value]="etapa">
+              {{etapa}}
+            </mat-option>
+          </mat-select>
         </mat-form-field>
         <button mat-stroked-button color="accent" class="full-width" type="submit">Incepe meci</button>
       </form>
@@ -74,7 +80,7 @@
         <button class="btn col s6 m6 l6" (click)="scor1(-1)">-</button>
         <button class="btn col s6 m6 l6" (click)="scor2(-1)">-</button>
       </div>
-
+      
       <br><br>
       <button mat-stroked-button color="accent" class="full-width" (click)="doFinishGame()">Incheie meci</button>
     </div>

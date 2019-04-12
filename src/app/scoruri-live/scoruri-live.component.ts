@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DatabaseService, MatchScore } from '../database.service';
 import { matchesElement } from '@angular/animations/browser/src/render/shared';
+import { isNullOrUndefined } from 'util';
 
 @Component({
   selector: 'app-scoruri-live',
@@ -40,12 +41,27 @@ export class ScoruriLiveComponent implements OnInit {
   'Tenis cu piciorul',
   'Dans Battle'];
 
+  getScoresForEtapa(etapa: string): MatchScore[] {
+    if (!isNullOrUndefined(this.displayMatches)) {
+      console.log(this.displayMatches);
+      return this.displayMatches.filter(match => match.match_id.toLocaleLowerCase() == etapa.toLocaleLowerCase());
+    } 
+  }
+
+  etape: string[] = [
+    'grupe',
+    'sferturi',
+    'semifinale',
+    'finala mica',
+    'finala mare'
+  ]
+
   matches: MatchScore[] = null;
   displayMatches: MatchScore[];
   ngOnInit() {
     this.dataService.getLiveScores().subscribe(scores => {
-      this.displayMatches = this.matches.filter(match => match.sport == this.currentSport)      
       this.matches = scores
+      this.displayMatches = this.matches.filter(match => match.sport == this.currentSport)      
     });
     setInterval(() => {
       this.currentSport ++;

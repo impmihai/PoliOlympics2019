@@ -3,6 +3,7 @@ import { Component,
 import { ActivatedRoute } from '@angular/router';
 import { MatchScore, DatabaseService } from '../database.service';
 import { DomSanitizer } from '@angular/platform-browser';
+import { isNullOrUndefined } from 'util';
 
 @Component({
   selector: 'app-sport',
@@ -13,6 +14,20 @@ export class SportComponent implements OnInit {
 
   constructor(private _route: ActivatedRoute, private databaseService: DatabaseService, private _sanitizer: DomSanitizer) { }
 
+  getScoresForEtapa(etapa: string): MatchScore[] {
+    if (!isNullOrUndefined(this.matches)) {
+      return this.matches.filter(match => match.match_id.toLocaleLowerCase() == etapa.toLocaleLowerCase());
+    } 
+  }
+
+  etape: string[] = [
+    'grupe',
+    'sferturi',
+    'semifinale',
+    'finala mica',
+    'finala mare'
+  ]
+ 
   id: number;
   sports = ['Fotbal',
    'Cros',

@@ -25,8 +25,16 @@ export class SportsLoginComponent implements OnInit {
     'team1': new FormControl('', [Validators.required]),
     'sport': new FormControl('', [Validators.required]),
     'team2': new FormControl('', [Validators.required]),
-    'match_id': new FormControl('grupe', []),
+    'match_id': new FormControl('', []),
   });
+
+  etape: string[] = [
+    'grupe',
+    'sferturi',
+    'semifinale',
+    'finala mica',
+    'finala mare'
+  ]
 
   universities = [
     'ACS',
@@ -107,16 +115,17 @@ export class SportsLoginComponent implements OnInit {
     if (this.scoringMatchForm.valid) {
       this.getMatchData().then(a => {
         this.matchPlaying = a;
-        this.updateMatchData();
+        this.updateMatchData(true);
       })
     }
   }
 
-  updateMatchData() {
+  updateMatchData(update_time?: boolean) {
     if (!isNullOrUndefined(this.matchPlaying)) {
       let id = [this.matchPlaying.team1, this.matchPlaying.team2].sort((u, j) => u-j).join('-') + `-${this.matchPlaying.sport}-${this.matchPlaying.match_id}`;
       this.matchPlaying.lastEditor = this.authState.auth.currentUser.email;
-      this.matchPlaying.lastUpdate = firebase.firestore.FieldValue.serverTimestamp();
+      if (!isNullOrUndefined(update_time))
+        this.matchPlaying.lastUpdate = firebase.firestore.FieldValue.serverTimestamp();
       this.afDb.collection('games').doc(id).set({...this.matchPlaying}, { merge: true });
     }
   }
