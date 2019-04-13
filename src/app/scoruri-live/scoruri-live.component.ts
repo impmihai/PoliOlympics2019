@@ -49,11 +49,11 @@ export class ScoruriLiveComponent implements OnInit {
   }
 
   etape: string[] = [
-    'grupe',
-    'sferturi',
-    'semifinale',
+    'finala mare',
     'finala mica',
-    'finala mare'
+    'semifinale',
+    'sferturi',
+    'grupe'
   ]
 
   matches: MatchScore[] = null;

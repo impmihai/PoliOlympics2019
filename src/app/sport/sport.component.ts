@@ -21,11 +21,11 @@ export class SportComponent implements OnInit {
   }
 
   etape: string[] = [
-    'grupe',
-    'sferturi',
-    'semifinale',
+    'finala mare',
     'finala mica',
-    'finala mare'
+    'semifinale',
+    'sferturi',
+    'grupe'
   ]
  
   id: number;
@@ -93,6 +93,7 @@ export class SportComponent implements OnInit {
       this.id = params['id'];
       console.log(this.id);
       this.databaseService.getLiveScores(this.id).subscribe(matches => {
+        // console.log (this.etape);
         this.matches = matches;
       });
     })
